@@ -25,15 +25,10 @@ function enviar() {
   const nome = document.getElementById("nome").value;
   const mensagem = document.getElementById("mensagem").value;
 
-  fetch("https://docs.google.com/forms/d/e/SEU_ID_DO_FORM/formResponse", {
+  fetch("https://formspree.io/f/xdanpyqg", {
     method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body:
-      "entry.XXXXXXXXXX=" + encodeURIComponent(nome) +
-      "&entry.YYYYYYYYYY=" + encodeURIComponent(mensagem)
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nome, mensagem })
   });
 
   document.getElementById("ok").style.display = "block";
