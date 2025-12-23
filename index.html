@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="login-box">
+    <h1>Enviar dados</h1>
+
+    <input id="nome" type="text" placeholder="Seu nome">
+    <input id="mensagem" type="text" placeholder="Mensagem">
+
+    <p id="ok">Sucesso</p>
+
+    <button onclick="enviar()">Enviar</button>
+  </div>
+
+<script>
+function enviar() {
+  const nome = document.getElementById("nome").value;
+  const mensagem = document.getElementById("mensagem").value;
+
+  fetch("https://docs.google.com/forms/d/e/SEU_ID_DO_FORM/formResponse", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body:
+      "entry.XXXXXXXXXX=" + encodeURIComponent(nome) +
+      "&entry.YYYYYYYYYY=" + encodeURIComponent(mensagem)
+  });
+
+  document.getElementById("ok").style.display = "block";
+}
+</script>
+
+</body>
+</html>
