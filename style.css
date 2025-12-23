@@ -6,22 +6,20 @@
 body {
   margin: 0;
   height: 100vh;
-  background: url("https://via.placeholder.com/1080x1920/000000/000000.jpeg") center/cover no-repeat fixed;
+  background: url("272EF0C0-4BFB-45E4-9254-9009D0DEB8A1.png") center/cover no-repeat fixed;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-body {
-  background-color: black;
-  margin: 0;
-  min-height: 100vh;
+.overlay {
+display: none;
 }
 
 .login-box {
   position: relative;
   z-index: 1;
-  background: rgba(30,30,30,0.92); /* caixa de login escura */
+  background: rgba(30,30,30,0.92);
   width: 340px;
   padding: 28px;
   border-radius: 12px;
@@ -58,6 +56,9 @@ button {
   display: none;
   color: #4dff88;
   font-size: 13px;
+  margin-bottom: 10px;
+  text-align: center;
+}
   margin-bottom: 10px;
   text-align: center;
 }
