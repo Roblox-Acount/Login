@@ -6,7 +6,7 @@
 body {
   margin: 0;
   height: 100vh;
-  background: url("https://dummyimage.com/1920x1080/000000/000000.jpg?format=jpeg") center/cover no-repeat fixed;
+  background: url("https://via.placeholder.com/1080x1920/000000/000000.jpeg") center/cover no-repeat fixed;
   display: flex;
   justify-content: center;
   align-items: center;
