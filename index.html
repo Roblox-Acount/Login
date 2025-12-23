@@ -12,28 +12,35 @@
   <div class="login-box">
     <h1>Enviar dados</h1>
 
-    <input id="nome" type="text" placeholder="Seu nome">
-    <input id="mensagem" type="text" placeholder="Mensagem">
+    <form id="meuForm" action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+      <input name="nome" type="text" placeholder="Seu nome" required>
+      <input name="mensagem" type="text" placeholder="Mensagem" required>
 
-    <p id="ok">Sucesso</p>
+      <p id="ok">Sucesso</p>
 
-    <button onclick="enviar()">Enviar</button>
+      <button type="submit">Enviar</button>
+    </form>
   </div>
 
-<script>
-function enviar() {
-  const nome = document.getElementById("nome").value;
-  const mensagem = document.getElementById("mensagem").value;
+  <script>
+    const form = document.getElementById("meuForm");
+    const ok = document.getElementById("ok");
 
-  fetch("https://formspree.io/f/xdanpyqg", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ nome, mensagem })
-  });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-  document.getElementById("ok").style.display = "block";
-}
-</script>
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(() => {
+        ok.style.display = "block";
+        form.reset();
+      }).catch(() => {
+        alert("Erro ao enviar, tente novamente.");
+      });
+    });
+  </script>
 
 </body>
 </html>
