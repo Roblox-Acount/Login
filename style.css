@@ -19,7 +19,7 @@ display: none;
 .login-box {
   position: relative;
   z-index: 1;
-  background: rgba(0,0,0,0.0);
+  background: rgb(0,0,0);
   width: 340px;
   padding: 28px;
   border-radius: 12px;
