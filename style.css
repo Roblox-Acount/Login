@@ -1,16 +1,24 @@
-* {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("https://images.wallpapersden.com/image/download/roblox-wallpaper-4k_a2pna2aUmZqaraWkpJRmbmdlrWZlbWU.jpg") center/cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .overlay {
-display: none;
+  display: none; /* remove a camada cinza */
 }
 
 .login-box {
   position: relative;
   z-index: 1;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(30,30,30,0.92); /* caixa de login escura */
   width: 340px;
   padding: 28px;
   border-radius: 12px;
@@ -47,9 +55,6 @@ button {
   display: none;
   color: #4dff88;
   font-size: 13px;
-  margin-bottom: 10px;
-  text-align: center;
-}
   margin-bottom: 10px;
   text-align: center;
 }
