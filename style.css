@@ -12,8 +12,10 @@ body {
   align-items: center;
 }
 
-.overlay {
-  display: none; /* remove a camada cinza */
+body {
+  background-color: black;
+  margin: 0;
+  min-height: 100vh;
 }
 
 .login-box {
